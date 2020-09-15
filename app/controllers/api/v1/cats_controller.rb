@@ -1,5 +1,5 @@
-class CatsController < ApplicationController
 
+class Api::V1::CatsController < ApplicationController
   def index
     @cats = Cat.alphabetical
     render json: @cats
@@ -31,5 +31,4 @@ class CatsController < ApplicationController
   def cat_purrams
     params.permit(:name, :actor, :description, :image, :team_name)
   end
-
 end
