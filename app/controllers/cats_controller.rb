@@ -16,7 +16,11 @@ class CatsController < ApplicationController
   end
 
   def update
-    @cat.add_tip
+    if (params[:name])
+      @cat.update(cat_purrrams)
+    else
+      @cat.add_tip
+    end
     render json: @cat
   end
 
